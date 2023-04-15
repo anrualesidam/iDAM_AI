@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'users_app'
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://idamai-production.up.railway.app']
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
