@@ -1,0 +1,13 @@
+{% autoescape off %}
+Hola,
+
+Gracias por completar tu registro en {{ protocol }}://{{ domain }}.
+
+Te queremos confirmar que tu cuenta fue creada con éxito y se encuentra activa.
+
+Si no realziaste un proceso de registro ultimamente, por favor ignora este correo.
+
+Atentamente,
+Equipo iDAM
+
+{% endautoescape %}

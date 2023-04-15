@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Quienes Somos{% endblock %}</title>
+    <!-- Incluir archivos de Bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <style>
+        @import url("{% static 'bootstrap/css/style.css' %}");
+    </style>
+</head>
+
+<body>
+        <!-- Aquí va el contenido del header -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom"  style="background: #141414" >
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'images/bitmap.png' %}" width="60" height="60" class="d-inline-block align-top img-fluid" alt="">
+                </a>
+                <!-- Sección de marca -->
+    
+                <!-- Botón para colapsar la barra de navegación en dispositivos pequeños -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">HOME</a>
+                      </li>
+                    
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+    <main>
+        <!-- Aquí va el contenido principal de la página -->
+        {% block content %}
+        
+        {% endblock %}        
+    </main>
+    <!-- Pie de página -->
+    <footer class="custom-footer" style="background: #141414">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                  <h5>CONTACTO</h5>
+                  <ul class="list-unstyled">
+                    <li>Celular: +57 3107820504</li>
+                    <li>Colombia, Medellín, Calle 67#52-20. </li>
+                    <li>Ruta N. Oficina: 1080.</li>
+                    <a href="mailto:serviciosalcliente@idam.com.co"> servicioalcliente@idam.com.co </a>
+                  </ul>
+                </div>
+              </div>
+
+        </div>
+    </footer>
+    <!-- Incluir archivos de jQuery y Popper.js para Bootstrap -->
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'popper/popper.min.js' %}"></script>
+</body>
+</html>

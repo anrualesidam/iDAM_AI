@@ -1,0 +1,40 @@
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.box {
+    width: 20%;
+    height: 20%;
+    margin: 2%;
+    padding: 2%;
+    border: 5px solid black;
+    background-color: #f5f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.box p{
+    max-height: 100%;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .box {
+      width: 45%;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .box {
+      width: 90%;
+    }
+  }
