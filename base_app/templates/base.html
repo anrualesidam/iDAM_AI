@@ -1,0 +1,205 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi sitio web{% endblock %}</title>
+    <!-- Incluir archivos de Bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <style>
+        @import url("{% static 'bootstrap/css/style.css' %}");
+        @import url("{% static 'bootstrap/css/style2.css' %}");
+    </style>
+
+</head>
+
+<body>
+        <!-- Aquí va el contenido del header -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom"  style="background: #141414" >
+            <div class="container">
+                <!-- Sección de marca -->
+                <a class="navbar-brand" >
+                    <img src="{% static 'images/bitmap.png' %}" width="60" height="60" class="d-inline-block align-top img-fluid" alt="" style="position: relative;">
+                </a>
+    
+                <!-- Botón para colapsar la barra de navegación en dispositivos pequeños -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">HOME</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'quienesomos' %}">QUIENES SOMOS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactanos' %}">CONTACTANOS</a>
+                      </li>
+                      {% if user.is_authenticated %}
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">LOG OUT </a>
+                      </li>
+                      {% else %}
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'SignIn' %}">SING IN / SIGN UP </a>
+                      </li>
+                      {% endif %}
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+      
+      <main>
+        {% block content %}
+        <br> 
+        <div class="container" style="background-color: #f5f0f0; padding: 2%; border-radius: 1%;" >
+        <br> 
+          
+        <!-- Productos -->
+        <!-- NUESTRAS SERVICIOS-->
+        <div class="jumbotron top-space align-items-center">
+          <div class="container" >
+            
+            <h3 class="text-center thin" style="color:#141414;"><b>NUESTROS SERVICIOS</b> </h3>
+            
+            <div class="row ">
+
+              <div class="col-md-6  ">
+                <a class="nav-link" href="{% url 'AnaliticaAvanzada' %}">
+                <div style="text-align: center;">
+                  <div class="h-caption" >
+                    <img class="el-image"  src="{% static 'images/analiticaavanzada.jpg' %}" alt='artsy Hong' width="400" height="250">
+                    <h4>ANALÍTICA AVANZADA</h4>
+                  </div>
+                </div>
+                </a>
+              </div>
+
+              <div class="col-md-6  ">
+                <a class="nav-link" href="{% url 'IngenieroDatos' %}">
+                <div style="text-align: center;">
+                  <div class="h-caption" >
+                    <img class="el-image" src="{% static 'images/ingenierodatos.jpg' %}" alt='artsy Hong' width="400" height="250">
+                    <h4>INGENIERÍA DE DATOS </h4>
+                  </div>
+                </div>
+                </a>
+              </div>
+              
+            </div> 
+
+            <div class="row row-centered">
+
+              <div class="col-md-6  ">
+                <a class="nav-link" href="{% url 'FormacionCapacitacion' %}">
+                <div style="text-align: center;">
+                  <div class="h-caption" >
+                    <img class="el-image" src="{% static 'images/formacioncapacitacion.jpg' %}" alt='artsy Hong' width="400" height="250">
+                    <h4>FORMACIÓN Y CAPACITACIÓN </h4>
+                  </div>
+                </div>
+                </a>
+              </div>
+              <div class="col-md-6 " >
+                <a class="nav-link" href="{% url 'LaboratorioData' %}">
+                <div style="text-align: center;">
+                  <div class="h-caption" >
+                    <img class="el-image" src="{% static 'images/laboratoriobisdata.jpg' %}" alt='artsy Hong' width="400" height="250">
+                    <h4>LABORATORIO DE CIENCIAS DE LA COMPUTACIÓN E INTELIGENCIA ARTIFICIAL</h4>
+                  </div>
+                </div>
+                </a>
+              </div>
+
+            </div> 
+          
+          </div>
+        </div>
+      </div>
+
+      <br> 
+
+      <div class="container" style="background-color: #f5f0f0; padding: 2%; border-radius: 1%;" >
+
+      <div class="jumbotron top-space align-items-center">
+        <div class="container" >
+          
+          <h3 class="text-center thin" style="color:#141414;"><b>CO-FUNDADORES</b> </h3>
+          
+          <div class="row ">
+
+            <div class="col-md-6  ">
+              <a class="nav-link" >
+              <div style="text-align: center;">
+                <div class="h-caption" >
+                  <img class="el-image"  src="{% static 'images/foto_alexis.png' %}" alt='artsy Hong' width="400" height="250">
+                  <h4>Anderson Alexis Ruales</h4>
+                </div>
+                <p style="text-align:justify;">Estudiante doctoral en física de altas energías, con más de 3 años
+                  de experiencia en ciencia e ingeniería de datos. Experto en visión 
+                  artificial, Big Data, Machine Learning, Inteligencia Artificial y Visualización Analítica. 
+                  Experiencia en implementar soluciones orientadas a problemas comerciales complejos.   
+                </p>
+              </div>
+              </a>
+            </div>
+
+            <div class="col-md-6  ">
+              <a class="nav-link">
+              <div style="text-align: center;">
+                <div class="h-caption" >
+                  <img class="el-image" src="{% static 'images/foto_josue.png' %}" alt='artsy Hong' width="400" height="250">
+                  <h4>Josue Serna</h4>
+                </div>
+                <p style="text-align:justify;">Estudiante universitario, formación en ciencia y entrenamiento internacional
+                  en analítica de datos. </p>
+              </div>
+              </a>
+            </div>
+            
+          </div> 
+
+
+        </div> 
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br> 
+
+
+
+        {% endblock %}     
+      </main>
+    <!-- Pie de página -->
+    <footer class="custom-footer" style="background: #141414">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                  <h5>CONTACTO</h5>
+                  <ul class="list-unstyled">
+                    <li>Celular: +57 3107820504</li>
+                    <li>Colombia, Medellín, Calle 67#52-20. </li>
+                    <li>Ruta N. Oficina: 1080.</li>
+                    <a href="mailto:serviciosalcliente@idam.com.co"> servicioalcliente@idam.com.co </a>
+                  </ul>
+                </div>
+              </div>
+
+        </div>
+    </footer>
+    <!-- Incluir archivos de jQuery y Popper.js para Bootstrap -->
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'popper/popper.min.js' %}"></script>
+</body>
+</html>
