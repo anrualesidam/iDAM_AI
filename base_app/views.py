@@ -7,6 +7,12 @@ from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.forms import PasswordResetForm
+from django.contrib.auth.models import User
+from django.db.models.query_utils import Q
+from django.utils.http import urlsafe_base64_encode
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.encoding import force_bytes
 from .forms import MyUserCreationForm
 
 # Create your views here.
@@ -52,8 +58,8 @@ def Register(request):
                                 subject = 'Registro Exitoso'
                                 email_template_name = 'register_email.txt'
                                 c = {
-                                'protocol': 'http',
-                                'domain': '127.0.0.1:8000'
+                                'protocol': 'https',
+                                'domain': 'idamm.com.co',
                                 }
                                 email = render_to_string(email_template_name, c)
                                 try:
@@ -72,6 +78,36 @@ def Register(request):
         else:
                 form = MyUserCreationForm()
                 return render(request, 'Register.html',{'form':form,})
+
+@csrf_protect
+def password_reset_request(request):
+        if request.method == 'POST':
+                password_reset_form = PasswordResetForm(request.POST)
+                if password_reset_form.is_valid():
+                      #  password_reset_form.save()
+                        data = password_reset_form.cleaned_data.get('email')
+                        associated_users = User.objects.filter(Q(username=data))
+                        if associated_users.exists():
+                                for user in associated_users:
+                                        subject = 'Reestablecimiento de contraseña solicitado'
+                                        email_template_name = 'password_reset_email.txt'
+                                        c =  {
+                                        'email': user.username,
+                                        'domain': 'idamm.com.co',
+                                        'site_name':'idam',
+                                        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                                        'user': user,
+                                        'token': default_token_generator.make_token(user),
+                                        'protocol':'https',
+                                        }
+                                        email = render_to_string(email_template_name, c)
+                                        try:
+                                                send_mail(subject, email, 'admin@idam.com', [user.username], fail_silently=False)
+                                        except BadHeaderError:
+                                                return HttpResponse('Invalid header found.')
+                                        return redirect('/PasswordReset/Done/')
+        password_reset_form = PasswordResetForm()
+        return render(request, 'password_reset.html', {'password_reset_form':password_reset_form})
 
 def AnaliticaAvanzada(request):
         return render(request,"AnaliticaAvanzada.html")

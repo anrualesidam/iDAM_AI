@@ -10,6 +10,7 @@ urlpatterns = [
     path('LaboratorioData/', views.LaboratorioData, name='LaboratorioData'),
     path('SignIn/', views.SignIn, name='SignIn'),
     path('Register/', views.Register, name='Register'),
+    path('PasswordReset/', views.password_reset_request, name='password_resett'),
     path('', views.Home, name='home'),
 
 ]
