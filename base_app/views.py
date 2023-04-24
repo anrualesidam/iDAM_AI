@@ -4,11 +4,11 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_protect
 from .forms import MyUserCreationForm
-
+from .forms import ContactForm
 # Create your views here.
 
 
@@ -18,9 +18,49 @@ def Home(request):
 def QuienesSomos(request):
         return render(request,"quienesomos.html")
 
-def Contactanos(request):
-        return render(request,"contactanos.html")
+#def Contactanos(request):
+#        return render(request,"contactanos.html")
 
+def index(request): 
+        if request.method == 'POST':
+                #form = ContactForm(request.POST)
+
+                name = request.POST['name']
+                email = request.POST['email'] 
+                subject = request.POST['subject']
+                message = request.POST['message']
+
+                template = render_to_string('email_template.html', {
+                        'name': name, 
+                        'email': email, 
+                        'message': message
+                })
+
+                email = EmailMessage(
+                        subject,
+                        template, 
+                        settings.EMAIL_HOST_USER,
+                        ['admin@idam.com'] # aca llega el correo
+                )
+
+                email.fail_silently = False # no marque error en gmail 
+                email.send()
+
+                messages.success(request, 'Se ha enviado tu correo.')
+
+                return redirect('contactanos')
+        
+        else:
+                form = ContactForm()
+                
+
+
+        return render(request, "contactanos.html", {
+                'form': form
+        })
+
+def contact(request): 
+        pass 
 @csrf_protect
 def SignIn(request):
     #verification of email and password given. this process was found on Django documentation

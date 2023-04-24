@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'base_app',
-    'users_app'
+    'users_app', 
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://idamai-production.up.railway.app', 'https://www.idamm.com.co', 'https://idamm.com.co']
@@ -132,6 +132,7 @@ USE_TZ = True
 #Email
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 
 # Static files (CSS, JavaScript, Images)

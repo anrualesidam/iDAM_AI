@@ -11,6 +11,7 @@
 
     <style>
         @import url("{% static 'bootstrap/css/style.css' %}");
+        @import url("{% static 'bootstrap/css/lineas.css' %}");
     </style>
 </head>
 
@@ -43,7 +44,15 @@
     <main>
         <!-- Aquí va el contenido principal de la página -->
         {% block content %}
-        
+        <div class="container2">
+            <div class="line-with-dot">
+              <span class="dot"></span>
+              <div class="text-container">
+                <p class="dot-text">Texto</p>
+              </div>
+            </div>
+          </div>
+
         {% endblock %}        
     </main>
     <!-- Pie de página -->
