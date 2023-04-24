@@ -57,7 +57,37 @@
     <main>
         <!-- Aquí va el contenido principal de la página -->
         {% block content %}
-        <h3>Esta es la página para contactarnos</h3>
+        <h1>Contacto</h1>
+        <form method="post" action="."> 
+          {%csrf_token %}
+          <span class="contac1-form-title">
+            Contacto
+          </span>
+          
+          {% if messages %}
+            {% for message in messages%}
+              <div class="alert alert-succes" role="alert">
+                {{message}}
+              </div>
+            {% endfor %}
+          {% endif %}
+          <div>
+            <input type="text" name="name" placeholder="nombre">
+          </div>
+          <div>
+            <input type="text" name="email" placeholder="correo electrónico">
+          </div>
+
+          <div>
+            <input type="text" name="subject" placeholder="Topico">
+          </div>
+          <div>
+            <input type="text" name="message" placeholder="Mensaje">
+          </div>
+          
+          <button>Subir</button>
+        </form>
+
         {% endblock %}        
     </main>
     <!-- Pie de página -->

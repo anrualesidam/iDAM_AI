@@ -1,0 +1,53 @@
+.container2 {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+.line-with-dot {
+    position: relative;
+    height: 0.3vw;
+    width: 20%;
+    background-color: black;
+    margin-top: 5vw ;
+    left: 0; 
+  }
+  
+  .line-with-dot .dot {
+    position: absolute;
+    top: -0.6vw;
+    left: 95%;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+.dot-text {
+    position: absolute;
+    left: 110%;
+    width: 10vw;
+    top: -0.7vw;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .line-with-dot {
+      height: 1px;
+      width: 200px;
+      margin-top: 5vw;
+    }
+    .line-with-dot .dot {
+      top: -0.8vw;
+      left: 100%;
+      width: 2vw;
+      height: 2vw;
+    }
+    .dot-text{
+        position: absolute;
+        left: 110%;
+        width: 20vw;
+        text-align: center;
+        top: -4.7vw;
+      }
+  }

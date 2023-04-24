@@ -27,6 +27,8 @@
     font-weight: bold;
 }
 
+
+
 @media only screen and (max-width: 768px) {
     .box {
       width: 45%;
@@ -38,3 +40,4 @@
       width: 90%;
     }
   }
+
