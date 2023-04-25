@@ -11,6 +11,8 @@
 
     <style>
         @import url("{% static 'bootstrap/css/style.css' %}");
+        @import url("{% static 'bootstrap/css/style2.css' %}");
+        @import url("{% static 'bootstrap/css/styleCajas.css' %}");
     </style>
 </head>
 
@@ -19,10 +21,10 @@
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom"  style="background: #141414" >
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'images/bitmap.png' %}" width="60" height="60" class="d-inline-block align-top img-fluid" alt="">
+                    <img src="{% static 'images/bitmap.png' %}" width="60" height="60" class="d-inline-block align-top img-fluid"  alt="">
                 </a>
                 <!-- Sección de marca -->
-    
+
                 <!-- Botón para colapsar la barra de navegación en dispositivos pequeños -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -33,7 +35,7 @@
                       <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}">HOME</a>
                       </li>
-                    
+
                     </ul>
                 </div>
 
@@ -43,8 +45,34 @@
     <main>
         <!-- Aquí va el contenido principal de la página -->
         {% block content %}
-        
-        {% endblock %}        
+        <br>
+        <center>
+            <h1 text-aling="center"> LABORATORIO </h1>
+
+            <p><h5>
+            Desarrollamos modelos y técnicas de análisis a la medida,
+            generando soluciones adaptadas a las necesidades de cada
+            cliente. Soluciones de IA que permiten hacer mejor uso de la
+            información,  proveer  nuevos  servicios  y  mejorar
+            operaciones.
+
+            </h5></p>
+
+
+            <br>
+            <br>
+
+
+
+                    <p style="display:inline; font-size:130%; padding:20px" >CONOCER NECESIDAD</p>
+                    <div id="plus" style="display:inline; padding:20px"></div>
+                    <p style="display:inline; font-size:130%; padding:20px" >INVESTIGACIÓN E IMPLEMENTACIÓN</p>
+                    <div id="plus" style="display:inline; padding:20px"></div>
+                    <p style="display:inline; font-size:130%; padding:20px" >PROPONER SOLUCIÓN</p>
+        </center>
+
+
+        {% endblock %}
     </main>
     <!-- Pie de página -->
     <footer class="custom-footer" style="background: #141414">
