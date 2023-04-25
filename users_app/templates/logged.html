@@ -3,7 +3,9 @@
 <html lang="es">
 <head>
     {% if not user.is_authenticated %}
-      <meta http-equiv='refresh' content="0; URL='/SignIn'  ">
+      <script type="text/javascript">
+        window.location.href = "SignIn";
+      </script>
     {% endif %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
