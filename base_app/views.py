@@ -24,10 +24,7 @@ def Home(request):
 def QuienesSomos(request):
         return render(request,"quienesomos.html")
 
-#def Contactanos(request):
-#        return render(request,"contactanos.html")
-
-def index(request): 
+def Contactanos(request):
         if request.method == 'POST':
                 #form = ContactForm(request.POST)
 
@@ -65,8 +62,6 @@ def index(request):
                 'form': form
         })
 
-def contact(request): 
-        pass 
 @csrf_protect
 def SignIn(request):
     #verification of email and password given. this process was found on Django documentation
