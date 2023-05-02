@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Quienes Somos{% endblock %}</title>
+    <title>{% block title %}Formacion y capacitacion{% endblock %}</title>
     <!-- Incluir archivos de Bootstrap -->
+    <link rel="shortcut icon" href="{% static 'images/bitmap.ico' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
     <style>
         @import url("{% static 'bootstrap/css/style.css' %}");
-        @import url("{% static 'bootstrap/css/lineas.css' %}");
+        @import url("{% static 'bootstrap/css/style2.css' %}");
+        @import url("{% static 'bootstrap/css/styleCajas.css' %}");
     </style>
 </head>
 
@@ -44,14 +46,35 @@
     <main>
         <!-- Aquí va el contenido principal de la página -->
         {% block content %}
-        <div class="container2">
-            <div class="line-with-dot">
-              <span class="dot"></span>
-              <div class="text-container">
-                <p class="dot-text">Texto</p>
-              </div>
+        <br> 
+        <center>
+            <h1 text-aling="center"> FORMACIÓN Y CAPACITACIÓN </h1>
+
+            <p><h5> 
+            Formamos y capacitamos a departamentos de compañias que requieran cientifícos e ingenieros
+            de datos, revolucionando completamente las compañias para mejorar su funcionamiento. Al 
+            automatizar tareas, las compañias pueden liberar al capital humano para enfocarlo en aspectos
+            mas relevantes del proceso productivo.  
+
+            </h5></p>
+        
+        
+            <br>
+            <br>
+
+            
+            <div class="contenedor">
+                <div class="box">
+                    <p > DIAGNÓSTICO</p>
+                </div>
+                <div class="box">
+                    <p> FORMACIÓN</p>
+                </div>
+                <div class="box">
+                    <p> APLICACIÓN</p>
+                </div>
             </div>
-          </div>
+        </center>
 
         {% endblock %}        
     </main>
