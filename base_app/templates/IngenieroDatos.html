@@ -12,6 +12,8 @@
 
     <style>
         @import url("{% static 'bootstrap/css/style.css' %}");
+        @import url("{% static 'bootstrap/css/style2.css' %}");
+        @import url("{% static 'bootstrap/css/styleCajas.css' %}");
     </style>
 </head>
 
@@ -44,6 +46,37 @@
     <main>
         <!-- Aquí va el contenido principal de la página -->
         {% block content %}
+        <br> 
+        <center>
+            <h1 text-aling="center"> INGENIERÍA DE DATOS </h1>
+
+            <p><h5> 
+            Muchas soluciones de Analítica se desmoronan cuando llega el momento de escalar
+            a mas datos, por esto pensamos en arquitecturas a hiperescala con un rendimiento
+            eficiente.   
+
+            </h5></p>
+        
+        
+            <br>
+            <br>
+
+            
+            <div class="contenedor">
+                <div class="box">
+                    <p > Software <br> Architecture</p>
+                </div>
+                <div class="box">
+                    <p> Strategic <br> Dashboards</p>
+                </div>
+                <div class="box">
+                    <p> Data <br> Processing</p>
+                </div>
+                <div class="box">
+                    <p> Quality <br> Efficiency</p>
+                </div>
+            </div>
+        </center>
         
         {% endblock %}        
     </main>
