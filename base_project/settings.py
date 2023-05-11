@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'users_app', 
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://idamai-production.up.railway.app', 'https://www.idamm.com.co', 'https://idamm.com.co']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-dbc0.up.railway.app', 'https://www.idamm.com.co', 'https://idamm.com.co']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
