@@ -81,16 +81,17 @@ WSGI_APPLICATION = 'base_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-#mysql://root:lfKiqegEczsYT4YERoJD@containers-us-west-12.railway.app:5809/railway
+#mysql://root:QX9cs206axrNy3JqBxyU@containers-us-west-37.railway.app:6429/railway
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'railway',
         'USER':'root',
-        'PASSWORD': 'lfKiqegEczsYT4YERoJD',
-        'HOST': 'containers-us-west-12.railway.app',
-        'PORT': '5809',
+        'PASSWORD': 'QX9cs206axrNy3JqBxyU',
+        'HOST': 'containers-us-west-37.railway.app',
+        'PORT': '6429',
     }
 }
 
