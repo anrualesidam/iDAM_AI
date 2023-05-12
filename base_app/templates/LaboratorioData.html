@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Laboratorio Datos{% endblock %}</title>
+    <title>{% block title %}Laboratorio Ciencias{% endblock %}</title>
     <!-- Incluir archivos de Bootstrap -->
     <link rel="shortcut icon" href="{% static 'images/bitmap.ico' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom"  style="background: #141414" >
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'images/bitmap.png' %}" width="60" height="60" class="d-inline-block align-top img-fluid"  alt="">
+                    <img src="{% static 'images/bitmap.png' %}" width="60" height="60" class="d-inline-block align-top img-fluid" alt="">
                 </a>
                 <!-- Sección de marca -->
 
@@ -64,14 +64,18 @@
             <br>
 
 
-
-                    <p style="display:inline; font-size:130%; padding:20px" >CONOCER NECESIDAD</p>
-                    <div id="plus" style="display:inline; padding:20px"></div>
-                    <p style="display:inline; font-size:130%; padding:20px" >INVESTIGACIÓN E IMPLEMENTACIÓN</p>
-                    <div id="plus" style="display:inline; padding:20px"></div>
-                    <p style="display:inline; font-size:130%; padding:20px" >PROPONER SOLUCIÓN</p>
+            <div class="contenedor">
+                <div class="box">
+                    <p > Conocer <br> Necesidad</p>
+                </div>
+                <div class="box">
+                    <p> Investigación e <br> Implementación</p>
+                </div>
+                <div class="box">
+                    <p> Proponer <br> Solución </p>
+                </div>
+            </div>
         </center>
-
 
         {% endblock %}
     </main>
